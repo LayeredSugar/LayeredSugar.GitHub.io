@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layered Sugar LLC | Software Development for Idol Culture</title>
+    <style>
+        /* Global Styles & Purple Palette */
+        :root {
+            --bg-dark: #120c1f;
+            --bg-card: #1c132e;
+            --purple-primary: #6200ee;
+            --purple-light: #bb86fc;
+            --purple-accent: #3700b3;
+            --text-main: #ffffff;
+            --text-muted: #b3a4cb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header / Navigation */
+        header {
+            padding: 30px 0;
+            border-bottom: 1px solid rgba(187, 134, 252, 0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--text-main);
+        }
+
+        .logo span {
+            color: var(--purple-light);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 100px 0 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+            background: linear-gradient(45deg, var(--text-main), var(--purple-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background-color: var(--purple-light);
+            color: var(--bg-dark);
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            background-color: #fff;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background-color: var(--bg-card);
+            border-radius: 16px;
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.25rem;
+            margin-bottom: 50px;
+            color: var(--text-main);
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 4px;
+            background-color: var(--purple-light);
+            margin: 10px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 0 40px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid rgba(187, 134, 252, 0.1);
+            transition: border 0.3s;
+        }
+
+        .card:hover {
+            border-color: var(--purple-light);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--purple-light);
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* About / Philosophy Section */
+        .about {
+            padding: 60px 0;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .contact p {
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        .contact-email {
+            font-size: 1.5rem;
+            color: var(--purple-light);
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        .contact-email:hover {
+            border-color: var(--purple-light);
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            border-top: 1px solid rgba(187, 134, 252, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .grid { padding: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo">Layered<span>Sugar</span></div>
+            <!-- <div style="color: var(--text-muted); font-size: 0.9rem;">LLC</div> -->
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Sweetening the Connection Between Idols & Fans</h1>
+            <p>We build specialized, high-performance software tailored exclusively for the unique world of idol culture and entertainment communities.</p>
+            <a href="#contact" class="cta-btn">Get In Touch</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">What We Do</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Custom Platforms</h3>
+                    <p>Tailored web and mobile architectures designed to scale alongside rapidly growing fanbases and peak-demand event traffic.</p>
+                </div>
+                <div class="card">
+                    <h3>Fan Engagement</h3>
+                    <p>Interactive software solutions that deepen the community experience, maximizing connection and interaction rhythm.</p>
+                </div>
+                <div class="card">
+                    <h3>Technical Consulting</h3>
+                    <p>Providing the specialized engineering backbone needed to bring creative, culture-focused digital concepts to life securely.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <h2 class="section-title">Our Philosophy</h2>
+            <p>Idol culture thrives on energy, layers of dedication, and community connection. At Layered Sugar LLC, we believe the underlying technology should be just as robust, vibrant, and reliable.</p>
+            <p>We combine modern software engineering paradigms with a deep understanding of fandom spaces to deliver beautiful, reliable digital experiences.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Let's Collaborate</h2>
+            <p>Have a project in mind or want to talk software development? Drop us a line.</p>
+            <!-- Replace placeholder email with your actual business email -->
+            <a href="mailto:hello@20051031.xyz" class="contact-email">hello@20051031.xyz</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Layered Sugar LLC. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
